@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { ExternalLink, Github, ImageIcon, Target } from "lucide-react"
+import { ExternalLink, ImageIcon, Target } from "lucide-react"
+import { GithubIcon } from "@/components/brand-icons"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
@@ -120,7 +121,7 @@ export function ProjectCard({ project }: { project: Project }) {
                 />
               }
             >
-              <Github className="size-4" aria-hidden="true" />
+              <GithubIcon className="size-4" aria-hidden="true" />
               Code
             </Button>
           )}

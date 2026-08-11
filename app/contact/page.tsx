@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { Github, Linkedin, Mail } from "lucide-react"
+import { Mail } from "lucide-react"
+import { GithubIcon, LinkedinIcon } from "@/components/brand-icons"
 import { Card, CardContent } from "@/components/ui/card"
 import { PageHeader } from "@/components/page-header"
 import { ContactForm } from "@/components/contact/contact-form"
@@ -22,14 +23,14 @@ export default function ContactPage() {
       external: false,
     },
     {
-      icon: Linkedin,
+      icon: LinkedinIcon,
       label: "LinkedIn",
       value: "in/rgkboquiren",
       href: profile.linkedin,
       external: true,
     },
     {
-      icon: Github,
+      icon: GithubIcon,
       label: "GitHub",
       value: "RosslerGKBoquiren",
       href: profile.github,

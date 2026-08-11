@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { Youtube, Train, Heart, PlaySquare, Video } from "lucide-react"
+import { Train, Heart, PlaySquare, Video } from "lucide-react"
+import { YoutubeIcon } from "@/components/brand-icons"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { PageHeader } from "@/components/page-header"
@@ -29,7 +30,7 @@ export default function AutismAwarenessPage() {
           <CardContent className="flex flex-col gap-6 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
             <div className="flex items-start gap-4">
               <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                <Youtube className="size-6" aria-hidden="true" />
+                <YoutubeIcon className="size-6" aria-hidden="true" />
               </div>
               <div>
                 <p className="font-serif text-xl font-semibold text-foreground">
@@ -51,7 +52,7 @@ export default function AutismAwarenessPage() {
                   <Link href={channelUrl} target="_blank" rel="noopener noreferrer" />
                 }
               >
-                <Youtube className="size-4" aria-hidden="true" />
+                <YoutubeIcon className="size-4" aria-hidden="true" />
                 Visit the YouTube Channel
               </Button>
             </div>
@@ -128,7 +129,7 @@ export default function AutismAwarenessPage() {
                 <Link href={channelUrl} target="_blank" rel="noopener noreferrer" />
               }
             >
-              <Youtube className="size-4" aria-hidden="true" />
+              <YoutubeIcon className="size-4" aria-hidden="true" />
               Watch on YouTube
             </Button>
           </div>

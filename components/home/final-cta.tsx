@@ -37,7 +37,7 @@ export function FinalCta() {
             <Link href={profile.github} target="_blank" rel="noopener noreferrer" />
           }
         >
-          <Github className="size-4" aria-hidden="true" />
+          <GithubIcon className="size-4" aria-hidden="true" />
           View GitHub
         </Button>
       </div>
