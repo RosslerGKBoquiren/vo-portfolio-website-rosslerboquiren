@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/card"
 import type { Project, ProjectStatus } from "@/lib/site-data"
 import { cn } from "@/lib/utils"
+import { ProjectGallery } from "@/components/projects/project-gallery"
 
 const statusStyles: Record<ProjectStatus, string> = {
   "In progress":
@@ -93,6 +94,10 @@ export function ProjectCard({ project }: { project: Project }) {
               ))}
             </ul>
           </div>
+        )}
+
+        {project.gallery && project.gallery.length > 0 && (
+          <ProjectGallery images={project.gallery} title={project.title} />
         )}
 
         <div className="mt-auto flex flex-wrap gap-1.5">

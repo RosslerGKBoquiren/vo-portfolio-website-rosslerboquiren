@@ -151,6 +151,11 @@ export type Project = {
   demoUrl?: string
   /** Path to an image in /public, or null for a placeholder. */
   image?: string | null
+  /**
+   * Optional gallery of screenshots shown on the card. Each opens in a
+   * lightbox. Drop images in /public and reference them here.
+   */
+  gallery?: { src: string; alt: string; caption?: string }[]
   learningOutcomes: string[]
   featured?: boolean
 }
@@ -190,7 +195,64 @@ export const projects: Project[] = [
     technologies: ["Python", "CrewAI", "Google Gemini API", "uv (Package Manager)", "YAML"],
     status: "Completed",
     categories: ["AI", "Automation"],
-    image: null,
+    image: "/projects/crewai/09-running-agents.png",
+    gallery: [
+      {
+        src: "/projects/crewai/01-crewai-cli-install.png",
+        alt: "Terminal showing the crewai CLI installed with uv tool list",
+        caption: "Installing the CrewAI CLI with uv (uv tool list confirms crewai v1.15.15).",
+      },
+      {
+        src: "/projects/crewai/02-project-structure.png",
+        alt: "Terminal listing the generated blog_writing_crew project structure",
+        caption: "The scaffolded project structure: src, config (agents.yaml, tasks.yaml), crew.py, main.py, and tools.",
+      },
+      {
+        src: "/projects/crewai/03-gemini-env.png",
+        alt: ".env file setting MODEL to gemini/gemini-2.5-flash",
+        caption: "Configuring the Google Gemini model via the .env file.",
+      },
+      {
+        src: "/projects/crewai/04-agents-yaml.png",
+        alt: "agents.yaml defining researcher, writer, and editor roles",
+        caption: "agents.yaml — role, goal, and backstory for the Researcher, Writer, and Editor agents.",
+      },
+      {
+        src: "/projects/crewai/05-tasks-yaml.png",
+        alt: "tasks.yaml defining research, writing, and editing tasks",
+        caption: "tasks.yaml — description, expected output, and assigned agent for each task.",
+      },
+      {
+        src: "/projects/crewai/06-crew-py.png",
+        alt: "crew.py wiring the BlogWritingCrew agents and tasks",
+        caption: "crew.py — binding the YAML config to agents and tasks with a sequential process.",
+      },
+      {
+        src: "/projects/crewai/07-main-py.png",
+        alt: "main.py running the crew with topic inputs",
+        caption: "main.py — the run() entry point that kicks off the crew with topic inputs.",
+      },
+      {
+        src: "/projects/crewai/08-crew-py-social-manager.png",
+        alt: "crew.py extended with a social media manager agent and task",
+        caption: "Extending the crew with a Social Media Manager agent and a matching social_media_task.",
+      },
+      {
+        src: "/projects/crewai/09-running-agents.png",
+        alt: "Terminal showing the crew running through task completion and the editor's final answer",
+        caption: "Running the crew — tasks complete in sequence and the Editor produces the final answer.",
+      },
+      {
+        src: "/projects/crewai/10-output-folder.png",
+        alt: "Output folder containing the generated future_AI_Agents.md blog post",
+        caption: "The generated blog post saved to the output folder as future_AI_Agents.md.",
+      },
+      {
+        src: "/projects/crewai/11-social-media-output.png",
+        alt: "Generated social media content strategy markdown file",
+        caption: "The Social Media Manager's output — a full YouTube growth content strategy in Markdown.",
+      },
+    ],
     learningOutcomes: [
       "Designed a sequential multi-agent pipeline where each agent passes its output as context to the next.",
       "Configured agents with distinct roles, goals, and backstories using reusable YAML configuration files.",
