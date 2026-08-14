@@ -89,10 +89,11 @@ export default function EducationPage() {
             id="certs-heading"
             className="font-serif text-2xl font-semibold text-foreground"
           >
-            Current learning
+            Certifications
           </h2>
           <p className="mt-2 text-muted-foreground">
-            Certifications I&apos;m actively working toward through DataCamp.
+            AI engineering certifications I&apos;ve completed, plus career
+            tracks I&apos;m actively working toward through DataCamp.
           </p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {certifications.map((cert) => (
@@ -102,6 +103,7 @@ export default function EducationPage() {
                     <p className="font-medium text-foreground">{cert.name}</p>
                     <p className="mt-0.5 text-sm text-muted-foreground">
                       {cert.provider}
+                      {cert.completed && ` · ${cert.completed}`}
                     </p>
                   </div>
                   <StatusBadge status={cert.status} />

@@ -381,9 +381,47 @@ export type Certification = {
   name: string
   provider: string
   status: "In progress" | "Completed"
+  /** Completion date for finished certifications, e.g. "Jul 2026". */
+  completed?: string
 }
 
 export const certifications: Certification[] = [
+  {
+    name: "Working with the OpenAI Responses API",
+    provider: "DataCamp",
+    status: "Completed",
+    completed: "Jul 2026",
+  },
+  {
+    name: "LLMOps Concepts",
+    provider: "DataCamp",
+    status: "Completed",
+    completed: "Jul 2026",
+  },
+  {
+    name: "Working with Hugging Face",
+    provider: "DataCamp",
+    status: "Completed",
+    completed: "Jul 2026",
+  },
+  {
+    name: "Prompt Engineering with the OpenAI API",
+    provider: "DataCamp",
+    status: "Completed",
+    completed: "Jul 2026",
+  },
+  {
+    name: "Multi-Modal Systems with the OpenAI API",
+    provider: "DataCamp",
+    status: "Completed",
+    completed: "Jun 2026",
+  },
+  {
+    name: "Working with the OpenAI API",
+    provider: "DataCamp",
+    status: "Completed",
+    completed: "Jun 2026",
+  },
   {
     name: "Data Engineering certification",
     provider: "DataCamp",
