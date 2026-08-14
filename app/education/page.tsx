@@ -93,9 +93,9 @@ export default function EducationPage() {
             Certifications
           </h2>
           <p className="mt-2 text-muted-foreground">
-            AI engineering certifications I&apos;ve completed, plus career
-            tracks I&apos;m actively working toward through DataCamp. Select a
-            certificate to view it full size.
+            AI and data engineering certifications I&apos;ve completed, plus the
+            career tracks I&apos;m actively working toward through DataCamp.
+            Select a certificate to view it full size.
           </p>
           <CertificationsGrid certifications={certifications} />
         </section>

@@ -67,45 +67,73 @@ export function CertificationsGrid({
 
   const active = openIndex !== null ? withImages[openIndex] : null
 
+  // Preserve first-seen order of categories from the data.
+  const groups = useMemo(() => {
+    const order: Certification["category"][] = []
+    const byCategory = new Map<Certification["category"], Certification[]>()
+    for (const cert of certifications) {
+      if (!byCategory.has(cert.category)) {
+        byCategory.set(cert.category, [])
+        order.push(cert.category)
+      }
+      byCategory.get(cert.category)!.push(cert)
+    }
+    return order.map((category) => ({
+      category,
+      items: byCategory.get(category)!,
+    }))
+  }, [certifications])
+
   return (
     <>
-      <div className="mt-6 grid gap-4 sm:grid-cols-2">
-        {certifications.map((cert) => {
-          const imageIndex = cert.image
-            ? withImages.findIndex((c) => c.name === cert.name)
-            : -1
+      <div className="mt-6 space-y-10">
+        {groups.map((group) => (
+          <div key={group.category}>
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-primary">
+              {group.category}
+            </h3>
+            <div className="mt-4 grid gap-4 sm:grid-cols-2">
+              {group.items.map((cert) => {
+                const imageIndex = cert.image
+                  ? withImages.findIndex((c) => c.name === cert.name)
+                  : -1
 
-          return (
-            <Card key={cert.name} className="overflow-hidden">
-              {cert.image && (
-                <button
-                  type="button"
-                  onClick={() => setOpenIndex(imageIndex)}
-                  className="group relative block aspect-[1.9/1] w-full overflow-hidden border-b border-border bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring"
-                  aria-label={`View ${cert.name} certificate`}
-                >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={cert.image || "/placeholder.svg"}
-                    alt={`${cert.name} certificate from ${cert.provider}`}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </button>
-              )}
-              <CardContent className="flex items-start justify-between gap-3 p-5">
-                <div>
-                  <p className="font-medium text-foreground">{cert.name}</p>
-                  <p className="mt-0.5 text-sm text-muted-foreground">
-                    {cert.provider}
-                    {cert.completed && ` · ${cert.completed}`}
-                  </p>
-                </div>
-                <StatusBadge status={cert.status} />
-              </CardContent>
-            </Card>
-          )
-        })}
+                return (
+                  <Card key={cert.name} className="overflow-hidden">
+                    {cert.image && (
+                      <button
+                        type="button"
+                        onClick={() => setOpenIndex(imageIndex)}
+                        className="group relative block aspect-[1.9/1] w-full overflow-hidden border-b border-border bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring"
+                        aria-label={`View ${cert.name} certificate`}
+                      >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={cert.image || "/placeholder.svg"}
+                          alt={`${cert.name} certificate from ${cert.provider}`}
+                          loading="lazy"
+                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </button>
+                    )}
+                    <CardContent className="flex items-start justify-between gap-3 p-5">
+                      <div>
+                        <p className="font-medium text-foreground">
+                          {cert.name}
+                        </p>
+                        <p className="mt-0.5 text-sm text-muted-foreground">
+                          {cert.provider}
+                          {cert.completed && ` · ${cert.completed}`}
+                        </p>
+                      </div>
+                      <StatusBadge status={cert.status} />
+                    </CardContent>
+                  </Card>
+                )
+              })}
+            </div>
+          </div>
+        ))}
       </div>
 
       {isOpen && active && (

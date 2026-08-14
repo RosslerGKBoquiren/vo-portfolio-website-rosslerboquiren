@@ -381,6 +381,8 @@ export type Certification = {
   name: string
   provider: string
   status: "In progress" | "Completed"
+  /** Track this certification belongs to, used to group the grid. */
+  category: "AI Engineering" | "Data Engineering"
   /** Completion date for finished certifications, e.g. "Jul 2026". */
   completed?: string
   /** Path to the certificate image in /public, if available. */
@@ -391,6 +393,7 @@ export const certifications: Certification[] = [
   {
     name: "Working with the OpenAI Responses API",
     provider: "DataCamp",
+    category: "AI Engineering",
     status: "Completed",
     completed: "Jul 2026",
     image: "/certifications/openai-responses-api.png",
@@ -398,6 +401,7 @@ export const certifications: Certification[] = [
   {
     name: "LLMOps Concepts",
     provider: "DataCamp",
+    category: "AI Engineering",
     status: "Completed",
     completed: "Jul 2026",
     image: "/certifications/llmops-concepts.png",
@@ -405,6 +409,7 @@ export const certifications: Certification[] = [
   {
     name: "Working with Hugging Face",
     provider: "DataCamp",
+    category: "AI Engineering",
     status: "Completed",
     completed: "Jul 2026",
     image: "/certifications/working-with-hugging-face.png",
@@ -412,6 +417,7 @@ export const certifications: Certification[] = [
   {
     name: "Prompt Engineering with the OpenAI API",
     provider: "DataCamp",
+    category: "AI Engineering",
     status: "Completed",
     completed: "Jul 2026",
     image: "/certifications/prompt-engineering.png",
@@ -419,6 +425,7 @@ export const certifications: Certification[] = [
   {
     name: "Multi-Modal Systems with the OpenAI API",
     provider: "DataCamp",
+    category: "AI Engineering",
     status: "Completed",
     completed: "Jun 2026",
     image: "/certifications/multi-modal-systems.png",
@@ -426,18 +433,69 @@ export const certifications: Certification[] = [
   {
     name: "Working with the OpenAI API",
     provider: "DataCamp",
+    category: "AI Engineering",
     status: "Completed",
     completed: "Jun 2026",
     image: "/certifications/working-with-openai-api.png",
   },
   {
-    name: "Data Engineering certification",
+    name: "AI Engineering certification",
     provider: "DataCamp",
+    category: "AI Engineering",
     status: "In progress",
   },
   {
-    name: "AI Engineering certification",
+    name: "Understanding Data Visualization",
     provider: "DataCamp",
+    category: "Data Engineering",
+    status: "Completed",
+    completed: "Aug 2026",
+    image: "/certifications/understanding-data-visualization.png",
+  },
+  {
+    name: "Data Warehousing Concepts",
+    provider: "DataCamp",
+    category: "Data Engineering",
+    status: "Completed",
+    completed: "Aug 2026",
+    image: "/certifications/data-warehousing-concepts.png",
+  },
+  {
+    name: "Database Design",
+    provider: "DataCamp",
+    category: "Data Engineering",
+    status: "Completed",
+    completed: "Aug 2026",
+    image: "/certifications/database-design.png",
+  },
+  {
+    name: "Introduction to Relational Databases in SQL",
+    provider: "DataCamp",
+    category: "Data Engineering",
+    status: "Completed",
+    completed: "Aug 2026",
+    image: "/certifications/intro-relational-databases-sql.png",
+  },
+  {
+    name: "Joining Data in SQL",
+    provider: "DataCamp",
+    category: "Data Engineering",
+    status: "Completed",
+    completed: "Jul 2026",
+    image: "/certifications/joining-data-sql.png",
+  },
+  {
+    name: "Intermediate SQL",
+    provider: "DataCamp",
+    category: "Data Engineering",
+    status: "Completed",
+    completed: "Jul 2026",
+    image: "/certifications/intermediate-sql.png",
+  },
+  {
+    name: "Data Engineering certification",
+    provider: "DataCamp",
+    category: "Data Engineering",
     status: "In progress",
   },
 ]
