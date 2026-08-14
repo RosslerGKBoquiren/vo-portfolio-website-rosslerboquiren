@@ -110,7 +110,7 @@ export function EducationList({ education }: { education: EducationEntry[] }) {
                       <button
                         type="button"
                         onClick={() => setOpenIndex(diplomaIndex)}
-                        className="group mt-4 block w-full max-w-md overflow-hidden rounded-lg border border-border bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                        className="group mt-4 block w-40 overflow-hidden rounded-lg border border-border bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                         aria-label={`View ${entry.program} diploma`}
                       >
                         <span className="relative block aspect-[1.3/1] w-full overflow-hidden">
@@ -122,9 +122,9 @@ export function EducationList({ education }: { education: EducationEntry[] }) {
                             className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
                           />
                           <span className="absolute inset-0 flex items-center justify-center bg-foreground/0 opacity-0 transition-all duration-300 group-hover:bg-foreground/40 group-hover:opacity-100">
-                            <span className="inline-flex items-center gap-1.5 rounded-full bg-card px-3 py-1.5 text-xs font-medium text-foreground">
+                            <span className="inline-flex items-center gap-1.5 rounded-full bg-card px-2.5 py-1 text-xs font-medium text-foreground">
                               <Maximize2 className="size-3.5" aria-hidden="true" />
-                              View diploma
+                              View
                             </span>
                           </span>
                         </span>

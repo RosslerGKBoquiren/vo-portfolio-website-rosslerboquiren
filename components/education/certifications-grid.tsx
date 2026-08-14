@@ -100,33 +100,35 @@ export function CertificationsGrid({
 
                 return (
                   <Card key={cert.name} className="overflow-hidden">
-                    {cert.image && (
-                      <button
-                        type="button"
-                        onClick={() => setOpenIndex(imageIndex)}
-                        className="group relative block aspect-[1.9/1] w-full overflow-hidden border-b border-border bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring"
-                        aria-label={`View ${cert.name} certificate`}
-                      >
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={cert.image || "/placeholder.svg"}
-                          alt={`${cert.name} certificate from ${cert.provider}`}
-                          loading="lazy"
-                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        />
-                      </button>
-                    )}
-                    <CardContent className="flex items-start justify-between gap-3 p-5">
-                      <div>
-                        <p className="font-medium text-foreground">
-                          {cert.name}
-                        </p>
-                        <p className="mt-0.5 text-sm text-muted-foreground">
-                          {cert.provider}
-                          {cert.completed && ` · ${cert.completed}`}
-                        </p>
+                    <CardContent className="flex items-center gap-4 p-4">
+                      {cert.image && (
+                        <button
+                          type="button"
+                          onClick={() => setOpenIndex(imageIndex)}
+                          className="group relative block h-14 w-20 shrink-0 overflow-hidden rounded-md border border-border bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                          aria-label={`View ${cert.name} certificate`}
+                        >
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={cert.image || "/placeholder.svg"}
+                            alt={`${cert.name} certificate from ${cert.provider}`}
+                            loading="lazy"
+                            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          />
+                        </button>
+                      )}
+                      <div className="flex flex-1 items-start justify-between gap-3">
+                        <div>
+                          <p className="font-medium text-foreground">
+                            {cert.name}
+                          </p>
+                          <p className="mt-0.5 text-sm text-muted-foreground">
+                            {cert.provider}
+                            {cert.completed && ` · ${cert.completed}`}
+                          </p>
+                        </div>
+                        <StatusBadge status={cert.status} />
                       </div>
-                      <StatusBadge status={cert.status} />
                     </CardContent>
                   </Card>
                 )
