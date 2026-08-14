@@ -179,7 +179,27 @@ export type Project = {
  *     featured: true,
  *   },
  */
-export const projects: Project[] = []
+export const projects: Project[] = [
+  {
+    slug: "crewai-blog-writing-crew",
+    title: "Build a Blog using Multi-AI Agent Collaboration with CrewAI",
+    description:
+      "A multi-agent AI workflow that automates the research, writing, and editing of blog posts. The project uses a sequential pipeline of specialized AI agents (Researcher, Writer, Editor, and Social Media Manager) to generate full articles and corresponding social media strategies.",
+    problem:
+      "Relying on a single prompt limits quality and control. A coordinated team of specialized agents can research, draft, edit, and promote content far more reliably than one generalist prompt.",
+    technologies: ["Python", "CrewAI", "Google Gemini API", "uv (Package Manager)", "YAML"],
+    status: "Completed",
+    categories: ["AI", "Automation"],
+    image: null,
+    learningOutcomes: [
+      "Designed a sequential multi-agent pipeline where each agent passes its output as context to the next.",
+      "Configured agents with distinct roles, goals, and backstories using reusable YAML configuration files.",
+      "Connected YAML agent and task definitions to Python via matching method names in crew.py and main.py.",
+      "Extended the crew with a Social Media Manager agent to generate Twitter threads and LinkedIn strategies.",
+    ],
+    featured: true,
+  },
+]
 
 export const projectCategories: ProjectCategory[] = [
   "AI",
