@@ -1,10 +1,8 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { GraduationCap, BadgeCheck, Loader } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Card, CardHeader, CardTitle } from "@/components/ui/card"
 import { PageHeader } from "@/components/page-header"
+import { EducationList } from "@/components/education/education-list"
 import { CertificationsGrid } from "@/components/education/certifications-grid"
 import { education, certifications } from "@/lib/site-data"
 
@@ -12,24 +10,6 @@ export const metadata: Metadata = {
   title: "Education & Certifications",
   description:
     "Rossler Boquiren's education and certifications, including a B.A. at University of the People, Herzing College diplomas, and in-progress DataCamp certifications.",
-}
-
-function StatusBadge({ status }: { status?: "In progress" | "Completed" }) {
-  if (!status) return null
-  const inProgress = status === "In progress"
-  return (
-    <Badge
-      variant={inProgress ? "secondary" : "outline"}
-      className="gap-1 rounded-full px-2.5"
-    >
-      {inProgress ? (
-        <Loader className="size-3" aria-hidden="true" />
-      ) : (
-        <BadgeCheck className="size-3" aria-hidden="true" />
-      )}
-      {status}
-    </Badge>
-  )
 }
 
 export default function EducationPage() {
@@ -50,38 +30,7 @@ export default function EducationPage() {
           >
             Education
           </h2>
-          <div className="mt-6 space-y-4">
-            {education.map((entry) => (
-              <Card key={`${entry.program}-${entry.institution}`}>
-                <CardHeader>
-                  <div className="flex items-start gap-4">
-                    <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                      <GraduationCap className="size-5" aria-hidden="true" />
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex flex-wrap items-start justify-between gap-2">
-                        <CardTitle className="font-serif text-lg">
-                          {entry.program}
-                        </CardTitle>
-                        <StatusBadge status={entry.status} />
-                      </div>
-                      {entry.detail && (
-                        <p className="mt-0.5 text-sm text-muted-foreground">
-                          {entry.detail}
-                        </p>
-                      )}
-                      <p className="mt-1 font-medium text-primary">
-                        {entry.institution}
-                      </p>
-                      <p className="text-sm text-muted-foreground">
-                        {entry.period}
-                      </p>
-                    </div>
-                  </div>
-                </CardHeader>
-              </Card>
-            ))}
-          </div>
+          <EducationList education={education} />
         </section>
 
         {/* Current learning / certifications */}

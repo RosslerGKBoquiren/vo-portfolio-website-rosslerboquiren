@@ -353,6 +353,8 @@ export type EducationEntry = {
   institution: string
   period: string
   status?: "In progress" | "Completed"
+  /** Path to a diploma image in /public, shown as verifiable proof. */
+  diploma?: string
 }
 
 export const education: EducationEntry[] = [
@@ -368,12 +370,14 @@ export const education: EducationEntry[] = [
     institution: "Herzing College",
     period: "2025",
     status: "Completed",
+    diploma: "/certifications/diploma-software-developer.png",
   },
   {
     program: "Diploma in Sustainable Architecture",
     institution: "Herzing College",
     period: "2023",
     status: "Completed",
+    diploma: "/certifications/diploma-sustainable-architecture.png",
   },
 ]
 
