@@ -149,6 +149,8 @@ export type Project = {
   categories: ProjectCategory[]
   githubUrl?: string
   demoUrl?: string
+  /** Link to a documentation / write-up page for the project. */
+  docsUrl?: string
   /** Path to an image in /public, or null for a placeholder. */
   image?: string | null
   /**
@@ -195,6 +197,7 @@ export const projects: Project[] = [
     technologies: ["Python", "CrewAI", "Google Gemini API", "uv (Package Manager)", "YAML"],
     status: "Completed",
     categories: ["AI", "Automation"],
+    docsUrl: "https://build-a-blog-multi-ai-agents-collab.vercel.app/",
     image: "/projects/crewai/09-running-agents.png",
     gallery: [
       {
