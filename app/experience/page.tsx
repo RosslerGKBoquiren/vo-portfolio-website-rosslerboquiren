@@ -46,7 +46,15 @@ export default function ExperiencePage() {
                 </h2>
                 <span className="text-sm text-muted-foreground">{exp.period}</span>
               </div>
-              <p className="mt-1 font-medium text-primary">{exp.company}</p>
+              <p className="mt-1 font-medium text-primary">
+                {exp.company}
+                {exp.location && (
+                  <span className="text-muted-foreground">
+                    {" "}
+                    &middot; {exp.location}
+                  </span>
+                )}
+              </p>
 
               <ul className="mt-4 space-y-2.5">
                 {exp.responsibilities.map((item) => (

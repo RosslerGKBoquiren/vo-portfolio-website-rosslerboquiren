@@ -275,6 +275,7 @@ export const projectCategories: ProjectCategory[] = [
 export type Experience = {
   role: string
   company: string
+  location?: string
   period: string
   responsibilities: string[]
   transferableSkills: string[]
@@ -284,43 +285,64 @@ export const experiences: Experience[] = [
   {
     role: "Lead Station Attendant",
     company: "Air Canada",
+    location: "Montréal, QC",
     period: "2022 – Present",
     responsibilities: [
-      "Developed junior station attendants through structured mentoring and knowledge transfer, increasing team efficiency.",
-      "Expedited equipment repairs and streamlined operations, reducing downtime and helping prevent delays.",
-      "Coordinated with planners, ground operations, and multiple departments to support seamless cargo-handling processes.",
-      "Verified cargo shipments against safety regulations and maintained operational standards that protect end-user safety.",
-      "Operated diverse equipment, including forklifts, tractors, and tugs, while adapting to changing schedules and operational demands.",
+      "Designed and delivered structured onboarding and mentoring programs for junior station attendants, standardizing procedures and improving operational throughput across shifts.",
+      "Collaborated with maintenance and planning teams to flag equipment issues early, track repair status, and reduce downtime, contributing to more predictable ground operations and reduced disruption risk.",
+      "Coordinated cargo flows between planners, ground operations, and multiple departments, ensuring accurate information handoff and minimizing bottlenecks in time-critical workflows.",
+      "Verified cargo shipments against safety and regulatory requirements using standardized checklists, improving data accuracy and compliance for high-volume operations.",
+      "Operated and monitored diverse ground support equipment (forklifts, tractors, tugs) in dynamic environments, adapting quickly to changing schedules and constraints while maintaining safety and performance.",
     ],
     transferableSkills: [
-      "Team leadership",
-      "Training and mentoring",
-      "Process optimization",
+      "Systems thinking",
+      "Process standardization",
       "Cross-functional collaboration",
-      "Safety and compliance",
-      "Adaptability",
-      "Operational problem-solving",
-      "User impact mindset",
+      "Throughput optimization",
+      "Data accuracy and compliance",
+      "Training and mentoring",
+      "Real-time problem-solving",
+      "Adaptability under constraints",
     ],
   },
   {
-    role: "Financial Security Advisor",
+    role: "Financial Security Advisor / Marketing Director",
     company: "World Financial Group of Canada",
     period: "2016 – 2026",
     responsibilities: [
-      "Generated more than $50,000 in sales commissions and consistently ranked among the top 10% of performers.",
-      "Promoted to Marketing Director in 2018 after exceeding performance targets and contributing to 20% team revenue growth.",
-      "Developed personalized financial strategies based on individual client needs and risk profiles.",
-      "Assessed complex client requirements and delivered comprehensive solutions focused on long-term client satisfaction.",
+      "Generated over $50,000 in commissions by analyzing client financial profiles and matching them to appropriate products, demonstrating data-informed decision making in a metrics-driven environment.",
+      "Promoted to Marketing Director in 2018 after leading a small team to over 20% revenue growth through targeted campaigns, pipeline tracking, and iterative optimization of outreach strategies.",
+      "Developed personalized financial strategies by assessing risk tolerance, cash flow, and long-term goals, translating complex constraints into clear, actionable plans for clients.",
+      "Managed end-to-end client engagements (discovery, solution design, follow-up), improving satisfaction and retention through structured communication and expectation management.",
     ],
     transferableSkills: [
+      "Data-informed decision making",
+      "Metrics and pipeline tracking",
+      "Iterative optimization",
+      "Team leadership",
+      "Requirements analysis",
+      "Solution design",
       "Client communication",
-      "Needs analysis",
-      "Problem-solving",
-      "Leadership",
-      "Performance management",
-      "Personalized solution design",
-      "Relationship building",
+      "Retention and satisfaction",
+    ],
+  },
+  {
+    role: "Customer Service Representative",
+    company: "Insta-Cheques",
+    location: "Montréal, QC",
+    period: "2015 – 2017",
+    responsibilities: [
+      "Consistently exceeded quarterly performance targets, contributing to the branch's ranking as a top-performing Montreal location and measurable increases in marginal profit.",
+      "Identified bottlenecks in debt collection workflows and proposed improvements to scripts and processes, helping to raise collection ratings and streamline daily operations.",
+      "Coordinated with management to design staff schedules aligned with budget and demand patterns, improving resource allocation and reducing coverage gaps.",
+    ],
+    transferableSkills: [
+      "Performance metrics",
+      "Bottleneck analysis",
+      "Workflow improvement",
+      "Process streamlining",
+      "Resource allocation",
+      "Demand-based planning",
     ],
   },
 ]
