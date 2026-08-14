@@ -3,8 +3,9 @@ import Link from "next/link"
 import { GraduationCap, BadgeCheck, Loader } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardHeader, CardTitle } from "@/components/ui/card"
 import { PageHeader } from "@/components/page-header"
+import { CertificationsGrid } from "@/components/education/certifications-grid"
 import { education, certifications } from "@/lib/site-data"
 
 export const metadata: Metadata = {
@@ -93,24 +94,10 @@ export default function EducationPage() {
           </h2>
           <p className="mt-2 text-muted-foreground">
             AI engineering certifications I&apos;ve completed, plus career
-            tracks I&apos;m actively working toward through DataCamp.
+            tracks I&apos;m actively working toward through DataCamp. Select a
+            certificate to view it full size.
           </p>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2">
-            {certifications.map((cert) => (
-              <Card key={cert.name}>
-                <CardContent className="flex items-start justify-between gap-3 p-5">
-                  <div>
-                    <p className="font-medium text-foreground">{cert.name}</p>
-                    <p className="mt-0.5 text-sm text-muted-foreground">
-                      {cert.provider}
-                      {cert.completed && ` · ${cert.completed}`}
-                    </p>
-                  </div>
-                  <StatusBadge status={cert.status} />
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <CertificationsGrid certifications={certifications} />
         </section>
 
         <div className="mt-12 rounded-2xl border border-primary/20 bg-primary/5 p-6">
