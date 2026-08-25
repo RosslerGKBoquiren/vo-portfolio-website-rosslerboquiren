@@ -204,6 +204,7 @@ export const projects: Project[] = [
     ],
     status: "Completed",
     categories: ["AI", "Automation"],
+    docsUrl: "https://n8n-workflow-automation-jet.vercel.app/",
     image: "/projects/n8n/03-ai-agent-canvas.png",
     gallery: [
       {
