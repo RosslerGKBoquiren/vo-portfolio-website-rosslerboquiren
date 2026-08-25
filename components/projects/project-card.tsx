@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ExternalLink, ImageIcon, Target } from "lucide-react"
+import { ExternalLink, FileText, ImageIcon, Target } from "lucide-react"
 import { GithubIcon } from "@/components/brand-icons"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -112,8 +112,8 @@ export function ProjectCard({ project }: { project: Project }) {
         </div>
       </CardContent>
 
-      {(project.githubUrl || project.demoUrl) && (
-        <CardFooter className="gap-2">
+      {(project.githubUrl || project.demoUrl || project.docsUrl) && (
+        <CardFooter className="flex-wrap gap-2">
           {project.githubUrl && (
             <Button
               variant="outline"
@@ -128,6 +128,22 @@ export function ProjectCard({ project }: { project: Project }) {
             >
               <GithubIcon className="size-4" aria-hidden="true" />
               Code
+            </Button>
+          )}
+          {project.docsUrl && (
+            <Button
+              variant="outline"
+              size="sm"
+              render={
+                <Link
+                  href={project.docsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
+            >
+              <FileText className="size-4" aria-hidden="true" />
+              Documentation
             </Button>
           )}
           {project.demoUrl && (
