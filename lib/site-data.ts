@@ -188,6 +188,89 @@ export type Project = {
  */
 export const projects: Project[] = [
   {
+    slug: "n8n-chatgpt-calendar-workflow",
+    title: "AI Workflow Automation using n8n and ChatGPT model",
+    description:
+      "An automated AI workflow built in n8n that turns plain-text chat messages into structured Google Calendar events. An AI Agent interprets the request, checks availability, and creates the booking through the Google Calendar API using dynamic expressions and a custom system prompt.",
+    problem:
+      "Booking meetings by hand means reading a message, translating it into a date and time, checking for conflicts, then filling out a calendar form. A workflow that parses intent and writes the event directly removes that repetitive back-and-forth.",
+    technologies: [
+      "n8n",
+      "ChatGPT",
+      "OpenAI API",
+      "Google Calendar API",
+      "AI Workflows",
+      "Prompt Engineering",
+    ],
+    status: "Completed",
+    categories: ["AI", "Automation"],
+    image: "/projects/n8n/03-ai-agent-canvas.png",
+    gallery: [
+      {
+        src: "/projects/n8n/01-exploring-n8n.png",
+        alt: "The n8n homepage showing AI agents and workflows on a visual canvas",
+        caption:
+          "Exploring n8n — a visual automation platform where every step of an agent's reasoning is traceable on the canvas.",
+      },
+      {
+        src: "/projects/n8n/02-chat-trigger-test.png",
+        alt: "n8n execution log showing the chat trigger output with action, sessionId, and chatInput",
+        caption:
+          "Testing the 'When chat message received' trigger — the output exposes action, sessionId, and chatInput for downstream nodes.",
+      },
+      {
+        src: "/projects/n8n/03-ai-agent-canvas.png",
+        alt: "n8n canvas with the chat trigger connected to an AI Agent node",
+        caption:
+          "Wiring the chat trigger into an AI Agent node, which exposes Chat Model, Memory, and Tool connection ports.",
+      },
+      {
+        src: "/projects/n8n/04-openai-chat-model.png",
+        alt: "OpenAI Chat Model node configured with a credential and model selection",
+        caption:
+          "Attaching the OpenAI Chat Model as the agent's reasoning engine and selecting the model from the credential's available list.",
+      },
+      {
+        src: "/projects/n8n/05-google-calendar-credential.png",
+        alt: "Google Calendar node with OAuth2 credential, Event resource, and Create operation",
+        caption:
+          "Connecting Google Calendar via OAuth2 — Resource set to Event, Operation to Create, with $now expressions for a first manual test.",
+      },
+      {
+        src: "/projects/n8n/06-calendar-tool-fromai.png",
+        alt: "Google Calendar Tool node using fromAI expressions for start and end times",
+        caption:
+          "Converting the node into an agent tool: $fromAI('start_time') and $fromAI('end_time') let the model supply the event window itself.",
+      },
+      {
+        src: "/projects/n8n/07-system-message.png",
+        alt: "AI Agent system message defining a calendar assistant with tool instructions",
+        caption:
+          "Defining the agent's system message — when to check availability and when to create an event with the Google Calendar tool.",
+      },
+      {
+        src: "/projects/n8n/08-constrained-response.png",
+        alt: "Chat response applying custom booking constraints before scheduling",
+        caption:
+          "Testing prompt behaviour — custom rules in the system message visibly change how the assistant reasons before it books.",
+      },
+      {
+        src: "/projects/n8n/09-event-created.png",
+        alt: "Google Calendar showing the event created by the workflow with its time slot and reminders",
+        caption:
+          "End-to-end result: the event lands in Google Calendar with the correct time slot and default reminders attached.",
+      },
+    ],
+    learningOutcomes: [
+      "Distinguished AI workflows from AI agents — fixed sequential steps versus a model that decides which tool to call at runtime.",
+      "Passed data between nodes with dynamic JSON expressions such as {{ $json.chatInput }} and $now-based date math.",
+      "Used $fromAI() to let the agent populate tool parameters, turning the Google Calendar node into a callable tool.",
+      "Shaped the assistant's personality and decision rules through system messages, then verified the change in its responses.",
+      "Authenticated a third-party API with OAuth2 credentials and tested each node in isolation before running the full workflow.",
+    ],
+    featured: true,
+  },
+  {
     slug: "crewai-blog-writing-crew",
     title: "Build a Blog using Multi-AI Agent Collaboration with CrewAI",
     description:
