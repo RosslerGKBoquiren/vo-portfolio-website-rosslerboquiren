@@ -348,6 +348,59 @@ export const projects: Project[] = [
     ],
     featured: true,
   },
+  {
+    slug: "give-kudos-app-copilot",
+    title: "Creating a 'Kudos' system with the help of Co-Pilot",
+    description:
+      "An internal team-recognition web application that lets employees submit appreciation messages, browse a public kudos feed, and moderate entries through an administrator mode. Built with HTML, CSS, and JavaScript alongside GitHub Copilot, with data persistence handled via localStorage.",
+    problem:
+      "Turning a simple recognition idea into a usable tool surfaces the details the concept leaves out — content moderation, admin permissions, duplicate submissions, spam prevention, input validation, audit history, and authentication all had to be planned before the app could be considered production ready.",
+    technologies: ["HTML5", "CSS3", "JavaScript", "GitHub Copilot", "VS Code"],
+    status: "Completed",
+    categories: ["AI", "Web Development"],
+    githubUrl: "https://github.com/RosslerGKBoquiren/give_kudos_app",
+    demoUrl: "https://rosslergkboquiren.github.io/give_kudos_app/",
+    image: "/projects/kudos/01-system-overview.png",
+    gallery: [
+      {
+        src: "/projects/kudos/01-system-overview.png",
+        alt: "Full kudos application with sidebar navigation, recognition stats, kudos feed, and the give kudos form",
+        caption:
+          "The full workspace — sidebar navigation, participation stats, the team kudos feed, and the give-kudos composer side by side.",
+      },
+      {
+        src: "/projects/kudos/02-kudos-feed.png",
+        alt: "Kudos feed listing recognition messages between colleagues with time stamps and tags",
+        caption:
+          "The public kudos feed: who celebrated whom, the message itself, a recognition tag, and a relative timestamp.",
+      },
+      {
+        src: "/projects/kudos/03-colleague-picker.png",
+        alt: "Open dropdown listing colleagues available to receive kudos",
+        caption:
+          "Choosing a recipient from the colleague list before writing the appreciation message.",
+      },
+      {
+        src: "/projects/kudos/04-admin-mode.png",
+        alt: "Sidebar profile showing the signed-in user with an admin mode indicator",
+        caption:
+          "Admin mode indicator on the signed-in profile — the switch that unlocks moderation controls.",
+      },
+      {
+        src: "/projects/kudos/05-moderation-controls.png",
+        alt: "Kudos entry showing visibility status with hide and delete moderation buttons",
+        caption:
+          "With admin mode on, each entry exposes its visibility state plus Hide and Delete actions for moderating inappropriate messages.",
+      },
+    ],
+    learningOutcomes: [
+      "Practised specification-driven development by writing a SPECIFICATION.md covering user stories, acceptance criteria, data schema, API endpoints, and security considerations before coding.",
+      "Used GitHub Copilot in VS Code to accelerate UI prototyping while independently steering the system architecture and quality control.",
+      "Implemented client-side state management and admin moderation workflows — hiding and deleting messages — on top of localStorage.",
+      "Evaluated the boundary between fast frontend prototyping and the requirements of production-grade software.",
+    ],
+    featured: true,
+  },
 ]
 
 export const projectCategories: ProjectCategory[] = [
